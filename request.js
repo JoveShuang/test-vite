@@ -1,0 +1,1 @@
+console.log("importmetaenv", import.meta.env)

@@ -1,0 +1,21 @@
+# temp files
+*.log
+*.bak
+*.swp
+.DS_Store
+
+# jetbrain ide files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# vscode poj files
+.vscode/
+
+# node poj files
+node_modules/
+dist/
+
+# please use yarn
+package-lock.json
