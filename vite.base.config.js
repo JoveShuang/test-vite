@@ -1,6 +1,9 @@
 import { defineConfig } from "vite";
 import { ViteAliases } from './node_modules/vite-aliases/dist';
 import MyAliases from './plugins/ViteAliases';
+import { createHtmlPlugin } from 'vite-plugin-html'
+import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin";
+import { viteMockServe } from 'vite-plugin-mock'
 
 // const path = require("path");
 
@@ -58,6 +61,22 @@ export default defineConfig({
     // ViteAliases({
     //   // prefix: '&'
     // }),
-    MyAliases({ keyName: '@' })
+    MyAliases({ keyName: '@' }),
+    // createHtmlPlugin({
+    //   inject: {
+    //     data: {
+    //       title: '主页',
+    //       // injectScript: `<script src="./inject.js"></script>`
+    //     }
+    //   }
+    // }),
+    CreateHtmlPlugin({
+      inject: {
+        data: {
+          title: "主页2"
+        }
+      }
+    }),
+    viteMockServe()
   ],
 })
